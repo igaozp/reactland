@@ -35,6 +35,20 @@ const Total = (props) => {
     )
 }
 
+const Display = (props) => {
+    return (
+        <div>{props.count}</div>
+    )
+}
+
+const Button = (props) => {
+    return (
+        <button onClick={props.handleClick}>
+            {props.text}
+        </button>
+    )
+}
+
 const Header = () => {
     const [count, setCount] = useState(0)
 
@@ -57,19 +71,17 @@ const Header = () => {
 
     const add = () => setCount(count + 1)
     const clear = () => setCount(0)
+    const reduce = () => setCount(count - 1)
 
     return (
         <header className="App-header">
             <img src={logo} className="App-logo" alt="logo"/>
             <p>Hello Vite + React!</p>
             <p>
-                <button onClick={add}>
-                    count is: {count}
-                </button>
-                <br/>
-                <button onClick={clear}>
-                    clear
-                </button>
+                <Display count={count}/>
+                <Button handleClick={add} text='add'/>
+                <Button handleClick={clear} text='clear'/>
+                <Button handleClick={reduce} text='reduce'/>
             </p>
             <Hello name="world"/>
             <Hello name="React"/>
