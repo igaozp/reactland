@@ -3,6 +3,7 @@ import logo from './logo.svg'
 import './App.css'
 
 const Hello = (props) => {
+    console.log(props)
     return (
         <div>
             <p>Hello {props.name}, today is {props.time}</p>
@@ -11,12 +12,14 @@ const Hello = (props) => {
 }
 
 const Course = (props) => {
+    console.log(props)
     return (
         <h1>{props.name}</h1>
     )
 }
 
 const Content = (props) => {
+    console.log(props)
     return (
         <p>{props.part} {props.exercise}</p>
     )
