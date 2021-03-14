@@ -2,10 +2,10 @@ import React, {useState} from 'react'
 import logo from './logo.svg'
 import './App.css'
 
-const Hello = () => {
+const Hello = (props) => {
     return (
         <div>
-            <p>Hello world</p>
+            <p>Hello {props.name}, today is {props.time}</p>
         </div>
     )
 }
@@ -13,6 +13,7 @@ const Hello = () => {
 function App() {
     const [count, setCount] = useState(0)
 
+    const now = '2021-03-14'
     return (
         <div className="App">
             <header className="App-header">
@@ -23,7 +24,8 @@ function App() {
                         count is: {count}
                     </button>
                 </p>
-                <Hello/>
+                <Hello name="world" time={'2021-03-14'}/>
+                <Hello name="React" time={now}/>
                 <p>
                     Edit <code>App.jsx</code> and save to test HMR updates.
                 </p>
