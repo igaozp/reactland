@@ -4,9 +4,13 @@ import './App.css'
 
 const Hello = (props) => {
     console.log(props)
+    const today = () => {
+        return new Date().getDate()
+    }
+
     return (
         <div>
-            <p>Hello {props.name}, today is {props.time}</p>
+            <p>Hello {props.name}, today is {today()}</p>
         </div>
     )
 }
@@ -35,7 +39,6 @@ const Total = (props) => {
 const Header = () => {
     const [count, setCount] = useState(0)
 
-    const now = '2021-03-14'
     const course = 'Half Stack application development'
     const parts = [
         {
@@ -61,8 +64,8 @@ const Header = () => {
                     count is: {count}
                 </button>
             </p>
-            <Hello name="world" time={'2021-03-14'}/>
-            <Hello name="React" time={now}/>
+            <Hello name="world" />
+            <Hello name="React" />
 
             <Course name={course}/>
             <Content part={parts[0].name} exercise={parts[0].exercise}/>
