@@ -2,21 +2,21 @@ import React, {useState} from 'react'
 import logo from './logo.svg'
 import './App.css'
 
-const Hello = (props) => {
-    console.log(props)
+const Hello = ({name}) => {
+    console.log(name)
     const today = () => new Date().getDate()
 
     return (
         <div>
-            <p>Hello {props.name}, today is {today()}</p>
+            <p>Hello {name}, today is {today()}</p>
         </div>
     )
 }
 
-const Course = (props) => {
-    console.log(props)
+const Course = ({name}) => {
+    console.log(name)
     return (
-        <h1>{props.name}</h1>
+        <h1>{name}</h1>
     )
 }
 
@@ -28,26 +28,20 @@ const Content = ({part, exercise}) => {
     )
 }
 
-const Total = (props) => {
-    console.log(props)
+const Total = ({parts}) => {
+    console.log(parts)
     return (
-        <p>Number of exercises {props.parts[0].exercise + props.parts[1].exercise + props.parts[2].exercise}</p>
+        <p>Number of exercises {parts[0].exercise + parts[1].exercise + parts[2].exercise}</p>
     )
 }
 
-const Display = (props) => {
-    return (
-        <div>{props.count}</div>
-    )
-}
+const Display = ({count}) => <div>{count}</div>
 
-const Button = (props) => {
-    return (
-        <button onClick={props.handleClick}>
-            {props.text}
-        </button>
-    )
-}
+const Button = ({handleClick, text}) => (
+    <button onClick={handleClick}>
+        {text}
+    </button>
+)
 
 const Header = () => {
     const [count, setCount] = useState(0)
