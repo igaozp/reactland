@@ -38,6 +38,7 @@ const Total = (props) => {
 const Header = () => {
     const [count, setCount] = useState(0)
 
+    console.log("rendering...", count)
     const course = 'Half Stack application development'
     const parts = [
         {
