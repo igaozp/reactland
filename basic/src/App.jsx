@@ -15,7 +15,7 @@ function App() {
 
     const now = '2021-03-14'
     return (
-        <div className="App">
+        <>
             <header className="App-header">
                 <img src={logo} className="App-logo" alt="logo"/>
                 <p>Hello Vite + React!</p>
@@ -49,7 +49,7 @@ function App() {
                     </a>
                 </p>
             </header>
-        </div>
+        </>
     )
 }
 
