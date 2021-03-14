@@ -25,6 +25,13 @@ const Content = (props) => {
     )
 }
 
+const Total = (props) => {
+    console.log(props)
+    return (
+        <p>Number of exercises {props.parts[0].exercise + props.parts[1].exercise + props.parts[2].exercise}</p>
+    )
+}
+
 const Header = () => {
     const [count, setCount] = useState(0)
 
@@ -40,8 +47,8 @@ const Header = () => {
             exercise: 7
         },
         {
-            name: 'Using props to pass data',
-            exercise: 7
+            name: 'State of a component',
+            exercise: 14
         }
     ]
 
@@ -61,6 +68,7 @@ const Header = () => {
             <Content part={parts[0].name} exercise={parts[0].exercise}/>
             <Content part={parts[1].name} exercise={parts[1].exercise}/>
             <Content part={parts[2].name} exercise={parts[2].exercise}/>
+            <Total parts={parts}/>
         </header>
     )
 }
