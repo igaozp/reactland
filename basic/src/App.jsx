@@ -55,13 +55,20 @@ const Header = () => {
         }
     ]
 
+    const add = () => setCount(count + 1)
+    const clear = () => setCount(0)
+
     return (
         <header className="App-header">
             <img src={logo} className="App-logo" alt="logo"/>
             <p>Hello Vite + React!</p>
             <p>
-                <button onClick={() => setCount((count) => count + 1)}>
+                <button onClick={add}>
                     count is: {count}
+                </button>
+                <br/>
+                <button onClick={clear}>
+                    clear
                 </button>
             </p>
             <Hello name="world"/>
