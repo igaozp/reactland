@@ -30,12 +30,19 @@ const Header = () => {
 
     const now = '2021-03-14'
     const course = 'Half Stack application development'
-    const part1 = 'Fundamentals of React'
-    const exercise1 = 10
-    const part2 = 'Using props to pass data'
-    const exercise2 = 7
-    const part3 = 'State of a component'
-    const exercise3 = 14
+    const part1 = {
+        name: 'Fundamentals of React',
+        exercise: 10
+    }
+    const part2 = {
+        name: 'Using props to pass data',
+        exercise: 7
+    }
+
+    const part3 = {
+        name: 'State of a component',
+        exercise: 14
+    }
 
     return (
         <header className="App-header">
@@ -50,9 +57,9 @@ const Header = () => {
             <Hello name="React" time={now}/>
 
             <Course name={course}/>
-            <Content part={part1} exercise={exercise1}/>
-            <Content part={part2} exercise={exercise2}/>
-            <Content part={part3} exercise={exercise3}/>
+            <Content part={part1.name} exercise={part1.exercise}/>
+            <Content part={part2.name} exercise={part2.exercise}/>
+            <Content part={part3.name} exercise={part3.exercise}/>
         </header>
     )
 }
