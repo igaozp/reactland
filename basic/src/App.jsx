@@ -4,9 +4,7 @@ import './App.css'
 
 const Hello = (props) => {
     console.log(props)
-    const today = () => {
-        return new Date().getDate()
-    }
+    const today = () => new Date().getDate()
 
     return (
         <div>
@@ -22,10 +20,11 @@ const Course = (props) => {
     )
 }
 
-const Content = (props) => {
-    console.log(props)
+const Content = ({part, exercise}) => {
+    console.log(part)
+    console.log(exercise)
     return (
-        <p>{props.part} {props.exercise}</p>
+        <p>{part} {exercise}</p>
     )
 }
 
@@ -64,8 +63,8 @@ const Header = () => {
                     count is: {count}
                 </button>
             </p>
-            <Hello name="world" />
-            <Hello name="React" />
+            <Hello name="world"/>
+            <Hello name="React"/>
 
             <Course name={course}/>
             <Content part={parts[0].name} exercise={parts[0].exercise}/>
