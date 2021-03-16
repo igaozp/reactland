@@ -70,8 +70,24 @@ const Header = () => {
     const [clicks, setClicks] = useState({
         left: 0, right: 0
     })
-    const handleLeftClick = () => setClicks({...clicks, left: clicks.left + 1})
-    const handleRightClick = () => setClicks({...clicks, right: clicks.right + 1})
+    const [allClicks, setAll] = useState([])
+
+    const handleLeftClick = () => {
+        const newClicks = {
+            ...clicks,
+            left: clicks.left + 1
+        }
+        setAll(allClicks.concat('L'))
+        setClicks(newClicks)
+    }
+    const handleRightClick = () => {
+        const newClicks = {
+            ...clicks,
+            right: clicks.right + 1
+        }
+        setAll(allClicks.concat('R'))
+        setClicks(newClicks)
+    }
 
     return (
         <header className="App-header">
@@ -97,6 +113,7 @@ const Header = () => {
                 <Button handleClick={handleLeftClick} text='left'/>
                 <Button handleClick={handleRightClick} text='right'/>
                 {clicks.right}
+                <p>{allClicks.join(' ')}</p>
             </div>
         </header>
     )
