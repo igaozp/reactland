@@ -67,6 +67,12 @@ const Header = () => {
     const clear = () => setCount(0)
     const reduce = () => setCount(count - 1)
 
+    const [clicks, setClicks] = useState({
+        left: 0, right: 0
+    })
+    const handleLeftClick = () => setClicks({...clicks, left: clicks.left + 1})
+    const handleRightClick = () => setClicks({...clicks, right: clicks.right + 1})
+
     return (
         <header className="App-header">
             <img src={logo} className="App-logo" alt="logo"/>
@@ -85,6 +91,13 @@ const Header = () => {
             <Content part={parts[1].name} exercise={parts[1].exercise}/>
             <Content part={parts[2].name} exercise={parts[2].exercise}/>
             <Total parts={parts}/>
+
+            <div>
+                {clicks.left}
+                <Button handleClick={handleLeftClick} text='left'/>
+                <Button handleClick={handleRightClick} text='right'/>
+                {clicks.right}
+            </div>
         </header>
     )
 }
