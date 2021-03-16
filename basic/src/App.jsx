@@ -43,6 +43,21 @@ const Button = ({handleClick, text}) => (
     </button>
 )
 
+const History = (props) => {
+    if (props.allClicks.length === 0) {
+        return (
+            <div>
+                the app is used by pressing the buttons
+            </div>
+        )
+    }
+    return (
+        <div>
+            button press history: {props.allClicks.join(' ')}
+        </div>
+    )
+}
+
 const Header = () => {
     const [count, setCount] = useState(0)
 
@@ -114,6 +129,7 @@ const Header = () => {
                 <Button handleClick={handleRightClick} text='right'/>
                 {clicks.right}
                 <p>{allClicks.join(' ')}</p>
+                <History allClicks={allClicks}/>
             </div>
         </header>
     )
