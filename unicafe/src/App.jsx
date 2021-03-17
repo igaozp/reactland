@@ -1,6 +1,20 @@
 import React, {useState} from 'react'
 import './App.css'
 
+const Statistics = ({data}) => {
+    return (
+        <div>
+            <h1>statistics</h1>
+            <p>good {data.good}</p>
+            <p>neutral {data.neutral}</p>
+            <p>bad {data.bad}</p>
+            <p>all {data.all}</p>
+            <p>average {data.average}</p>
+            <p>positive {data.positive}</p>
+        </div>
+    )
+}
+
 function App() {
     const [good, setGoodCount] = useState(0)
     const [neutral, setNeutralCount] = useState(0)
@@ -31,6 +45,10 @@ function App() {
         setPositive(calcPositivePercent())
     }
 
+    const data = {
+        good, neutral, bad, all, average, positive
+    }
+
     return (
         <>
             <h1>give feedback</h1>
@@ -39,13 +57,7 @@ function App() {
             <button onClick={neutralClick}>neutral</button>
             <button onClick={badClick}>bad</button>
 
-            <h1>statistics</h1>
-            <p>good {good}</p>
-            <p>neutral {neutral}</p>
-            <p>bad {bad}</p>
-            <p>all {all}</p>
-            <p>average {average}</p>
-            <p>positive {positive}</p>
+            <Statistics data={data}/>
         </>
     )
 }
