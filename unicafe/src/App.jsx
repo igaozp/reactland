@@ -2,17 +2,23 @@ import React, {useState} from 'react'
 import './App.css'
 
 const Statistics = ({data}) => {
-    return (
-        <div>
-            <h1>statistics</h1>
-            <p>good {data.good}</p>
-            <p>neutral {data.neutral}</p>
-            <p>bad {data.bad}</p>
-            <p>all {data.all}</p>
-            <p>average {data.average}</p>
-            <p>positive {data.positive}</p>
-        </div>
-    )
+    if (data.all === 0) {
+        return (
+            <p>No feedback given</p>
+        )
+    } else {
+        return (
+            <div>
+                <h1>statistics</h1>
+                <p>good {data.good}</p>
+                <p>neutral {data.neutral}</p>
+                <p>bad {data.bad}</p>
+                <p>all {data.all}</p>
+                <p>average {data.average}</p>
+                <p>positive {data.positive}</p>
+            </div>
+        )
+    }
 }
 
 function App() {
