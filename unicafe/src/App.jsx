@@ -9,16 +9,27 @@ const Statistics = ({data}) => {
     } else {
         return (
             <div>
-                <h1>statistics</h1>
-                <p>good {data.good}</p>
-                <p>neutral {data.neutral}</p>
-                <p>bad {data.bad}</p>
-                <p>all {data.all}</p>
-                <p>average {data.average}</p>
-                <p>positive {data.positive}</p>
+                <Statistic text='good' value={data.good}/>
+                <Statistic text='neutral' value={data.neutral}/>
+                <Statistic text='bad' value={data.bad}/>
+                <Statistic text='all' value={data.all}/>
+                <Statistic text='average' value={data.average}/>
+                <Statistic text='positive' value={data.positive}/>
             </div>
         )
     }
+}
+
+const Statistic = (props) => {
+    return (
+        <p>{props.text} {props.value}</p>
+    )
+}
+
+const Button = ({text, handleClick}) => {
+    return (
+        <button onClick={handleClick}>{text}</button>
+    )
 }
 
 function App() {
@@ -59,10 +70,11 @@ function App() {
         <>
             <h1>give feedback</h1>
 
-            <button onClick={goodClick}>good</button>
-            <button onClick={neutralClick}>neutral</button>
-            <button onClick={badClick}>bad</button>
+            <Button text='good' handleClick={() => goodClick()}/>
+            <Button text='neutral' handleClick={() => neutralClick()}/>
+            <Button text='bad' handleClick={() => badClick()}/>
 
+            <h1>statistics</h1>
             <Statistics data={data}/>
         </>
     )
