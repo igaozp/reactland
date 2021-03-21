@@ -20,13 +20,7 @@ const Course = ({name}) => {
     )
 }
 
-const Content = ({part, exercise}) => {
-    console.log(part)
-    console.log(exercise)
-    return (
-        <p>{part} {exercise}</p>
-    )
-}
+const Content = ({parts}) => parts.map(part => <p>{part.name} {part.exercise}</p>)
 
 const Total = ({parts}) => {
     console.log(parts)
@@ -118,9 +112,7 @@ const Header = () => {
             <Hello name="React"/>
 
             <Course name={course}/>
-            <Content part={parts[0].name} exercise={parts[0].exercise}/>
-            <Content part={parts[1].name} exercise={parts[1].exercise}/>
-            <Content part={parts[2].name} exercise={parts[2].exercise}/>
+            <Content parts={parts}/>
             <Total parts={parts}/>
 
             <div>
