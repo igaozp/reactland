@@ -31,7 +31,7 @@ const Content = ({part, exercise}) => {
 const Total = ({parts}) => {
     console.log(parts)
     return (
-        <p>Number of exercises {parts[0].exercise + parts[1].exercise + parts[2].exercise}</p>
+        <p>Number of exercises {parts.map(part => part.exercise).reduce((first, second) => first + second)}</p>
     )
 }
 
@@ -108,12 +108,12 @@ const Header = () => {
         <header className="App-header">
             <img src={logo} className="App-logo" alt="logo"/>
             <p>Hello Vite + React!</p>
-            <p>
+            <div>
                 <Display count={count}/>
                 <Button handleClick={add} text='add'/>
                 <Button handleClick={clear} text='clear'/>
                 <Button handleClick={reduce} text='reduce'/>
-            </p>
+            </div>
             <Hello name="world"/>
             <Hello name="React"/>
 
