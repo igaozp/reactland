@@ -1,7 +1,6 @@
 import React from 'react'
 import './App.css'
-
-const Note = ({note}) => <li>{note.content}</li>
+import Note from "./components/Note";
 
 const App = ({notes}) => {
     return (
