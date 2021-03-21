@@ -1,56 +1,13 @@
 import React, {useState} from 'react'
 import logo from './logo.svg'
 import './App.css'
-
-const Hello = ({name}) => {
-    console.log(name)
-    const today = () => new Date().getDate()
-
-    return (
-        <div>
-            <p>Hello {name}, today is {today()}</p>
-        </div>
-    )
-}
-
-const Course = ({name}) => {
-    console.log(name)
-    return (
-        <h1>{name}</h1>
-    )
-}
-
-const Content = ({parts}) => parts.map(part => <p>{part.name} {part.exercise}</p>)
-
-const Total = ({parts}) => {
-    console.log(parts)
-    return (
-        <p>Number of exercises {parts.map(part => part.exercise).reduce((first, second) => first + second)}</p>
-    )
-}
-
-const Display = ({count}) => <div>{count}</div>
-
-const Button = ({handleClick, text}) => (
-    <button onClick={handleClick}>
-        {text}
-    </button>
-)
-
-const History = (props) => {
-    if (props.allClicks.length === 0) {
-        return (
-            <div>
-                the app is used by pressing the buttons
-            </div>
-        )
-    }
-    return (
-        <div>
-            button press history: {props.allClicks.join(' ')}
-        </div>
-    )
-}
+import Course from "./components/Course";
+import Content from "./components/Content";
+import History from "./components/History";
+import Hello from "./components/Hello";
+import Display from "./components/Display";
+import Total from "./components/Total";
+import Button from "./components/Button";
 
 const Header = () => {
     const [count, setCount] = useState(0)
