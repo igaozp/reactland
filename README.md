@@ -13,3 +13,4 @@
 - basic React 基础练习
 - unicafe 简易的投票统计应用
 - anecdotes 简易的计算机名言随机展示应用
+- note 简易的笔记应用
